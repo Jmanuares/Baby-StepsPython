@@ -2,7 +2,7 @@ def p_rectangulo(B,H):
     if B < 1 or H < 1:
         print("no ingrese numeros negativos")
     else:
-        perimetro = (B + H)*2
+        perimetro = (B*2 + H*2)
         return perimetro
     
     
@@ -46,7 +46,7 @@ def hipotenusa (c1,c2):
     if c1 < 1 or c2 < 1:
         print("no ingrese numeros negativos")
     else:
-        hipotenusa = (c1+c2)**2
+        hipotenusa = (c1**2+c2**2)**0.5
         return hipotenusa
     
 
