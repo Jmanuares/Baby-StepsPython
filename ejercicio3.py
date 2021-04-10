@@ -1,8 +1,11 @@
 def factorial(n):
-    r = 1
-    for i in (range(1, n)):
-        a = r * i
-        r = r + a  
+    if n == 0:
+        r = 0
+    else:
+        r = 1
+        for i in (range(1, n)):
+            a = r * i
+            r = r + a  
     return r
         
 
