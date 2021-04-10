@@ -1,8 +1,7 @@
                                                     TP1 – Introducción a Python
-
+![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
 Nota: La implementación también se debe documentar, con comentarios dentro y fuera del código,
 al respecto de qué hace el programa, cómo lo hace y por qué lo hace de esa forma.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Escribir un programa que pregunte al usuario:
     1. Su nombre, y luego lo salude.
