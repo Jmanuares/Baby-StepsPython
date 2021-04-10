@@ -1,7 +1,6 @@
                                                     TP1 – Introducción a Python
 ```diff
-!Nota: La implementación también se debe documentar, con comentarios dentro y fuera del código,
-!al respecto de qué hace el programa, cómo lo hace y por qué lo hace de esa forma.
+-Nota: La implementación también se debe documentar, con comentarios dentro y fuera del código, al respecto de qué hace el programa, cómo lo hace y por qué lo hace de esa forma.
 ```
 1. Escribir un programa que pregunte al usuario:
     1. Su nombre, y luego lo salude.
