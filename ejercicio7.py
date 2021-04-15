@@ -32,7 +32,7 @@ def mesdia(mes):
 
 def valid(dia,mes,año):
     if dia > 0:
-        if 1 < mes and mes < 12:
+        if 0 < mes and mes < 13:
             if dia > mesdia(mes):
                 return "Fecha no valida"
             else:
@@ -55,7 +55,7 @@ def findeaño(dia,mes,año):
         mesRestan = 12 - mes
         r=0
         if mesRestan != 0:
-            for i in (range(1,mesRestan + 1)):
+            for i in (range(mes, 12)):
                 a = mesdia(i)  
                 r = r + a  
         fal = r + faltan(dia,mes,año)
