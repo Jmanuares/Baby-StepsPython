@@ -1,3 +1,4 @@
+""" Implementar un algoritmo (en una o más funciones) que, dado un número entero n, permita calcular su factorial."""
 def factorial(n):
     if n == 0:
         r = 0

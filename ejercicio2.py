@@ -1,3 +1,12 @@
+"""  Implementar algoritmos (en forma de función) que permitan:
+
+ Calcular el perímetro de un rectángulo dada su base y su altura.
+ Calcular el área de un rectángulo dada su base y su altura.
+ Calcular el área de un rectángulo (alineado con los ejes x e y ) dadas sus coordenadas x1,x2, y1,y2.
+ Calcular el perímetro de un círculo dado su radio.
+ Calcular el área de un círculo dado su radio.
+ Calcular el volumen de una esfera dado su radio.
+ Dados los catetos de un triángulo rectángulo, calcular su hipotenusa. """
 def p_rectangulo(B,H):
     if B < 1 or H < 1:
         print("no ingrese numeros negativos")
