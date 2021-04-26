@@ -7,7 +7,7 @@ from time import time.sleep
 espera = 0
 intentos = 0
 def valid(password):
-    if password == "Bocaelmasgrande":    
+    if password == "contraseña123":    
         return 1
     else:
         return 0
