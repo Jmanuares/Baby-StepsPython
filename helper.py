@@ -5,4 +5,3 @@
 #         return 0
 def numero(n):
     return n.isnumeric()
-

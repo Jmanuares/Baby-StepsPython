@@ -24,14 +24,16 @@ frase = ""
 letra = ""
 
 def palindromo(palabra):
-    frase = ""
-    for letra in palabra:
-        if not letra in " ":
-            frase = frase + letra 
+    frase = palabra.replace(" ","")
+    # frase = ""
+    # for letra in palabra:
+    #     if not letra in " ":
+    #         frase = frase + letra 
     if frase == frase[::-1]:
         return 1
     else:
         return 0
+
 
 
 funcion = input("""¿Que desea hacer? escoja un numero"
@@ -72,4 +74,4 @@ if funcion == "1" or funcion == "2" or funcion == "3" or funcion == "4":
     else:
             print("Respuesta invalida")
 else:
-            print("Respuesta invalida")
+    print("Respuesta invalida")
