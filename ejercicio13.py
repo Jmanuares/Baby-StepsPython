@@ -5,12 +5,12 @@ Nota: Por ejemplo, la versión capitalizada de la palabra “programar” es “
 
 palabra = input("ingrese una palabra: ")
 palabra2 = input("ingrese otra palabra: ")
-def capital(str1,str2):
+def verificarCapital(str1,str2):
     if palabra == palabra2.upper():
         return True
     else: 
         return False
-if capital(palabra,palabra2):
+if verificarCapital(palabra,palabra2):
     print(f"La palabra {palabra} es la version capitalizada de {palabra2}")
 else:
     print(f"La palabra {palabra} no es la version capitalizada de palabra {palabra2}")

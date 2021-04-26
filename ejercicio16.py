@@ -35,43 +35,48 @@ def palindromo(palabra):
         return 0
 
 
+try:
+    funcion = int(input("""¿Que desea hacer? escoja un numero"
+    1. Solo consonantes
+    2. Solo vocales
+    3. Siguiente vocal
+    4. Palindromo
+    """))
+except:
+    print("Dato invalido")
+    exit()
 
-funcion = input("""¿Que desea hacer? escoja un numero"
-1. Solo consonantes
-2. Solo vocales
-3. Siguiente vocal
-4. Palindromo
-""")
-if funcion == "1" or funcion == "2" or funcion == "3" or funcion == "4":
+
+if funcion == 1 or funcion == 2 or funcion == 3 or funcion == 4:
     palabra = input("ingrese una cadena de caracteres unicode: ")
     if palabra != "":
-        if funcion == "1": 
+        if funcion == 1: 
             for letra in palabra:
                 if not letra in "AEIOUaeiou":
                     letras = letras + letra 
             print(letras)
 
-        if funcion == "2":
+        if funcion == 2:
             for letra in palabra:
                 if letra in "AEIOUaeiou ":
                     letras = letras + letra 
             print(letras)
 
-        if funcion == "3":
+        if funcion == 3:
             for letra in palabra:
                 if letra in "AEIOUaeiou":
                     letra = vocales[str(letra)]
                 frase = frase + letra 
             print(frase)
 
-        if funcion == "4":
+        if funcion == 4:
             if (palindromo(palabra)) == 1:
                 print(f"({palabra}) es un palindromo")
             elif (palindromo(palabra)) == 0:
                 print(f"({palabra}) no es un palindromo")
         else:
-            print("Respuesta invalida")
+            print("ingreso de datos erroneo")
     else:
-            print("Respuesta invalida")
+            print("ingreso de datos erroneo")
 else:
-    print("Respuesta invalida")
+    print("ingreso de datos erroneo")

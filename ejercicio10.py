@@ -2,20 +2,20 @@
  y le indique si son menores o mayores que el número a adivinar, hasta que el usuario ingrese el número correcto """
 import random
 from helper import numero
-num = (random.randrange(1, 1000))
+numRandom = (random.randrange(1, 1000))
 
 while True:
-    adiv = input("""Ingrese un numero del 1 al 1000
+    numAdivinado = input("""Adivina un numero del 1 al 1000
     """)
-    if not numero(adiv):
-        print("Favor de ingresar un numero".upper())
+    if not numero(numAdivinado):
+        print("Eso no es un numero!!!")
         continue
     else:
-        int(adiv)
-        if int(adiv) < num:
+        int(numAdivinado)
+        if int(numAdivinado) < numRandom:
             print("El numero es mayor")
-        elif int(adiv) > num:
+        elif int(numAdivinado) > numRandom:
             print("El numero es menor")
-        elif int(adiv) == num:
+        elif int(numAdivinado) == numRandom:
             print("FELICITACIONES ADIVINO EL NUMERO")
             break

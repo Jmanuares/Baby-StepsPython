@@ -6,36 +6,56 @@
     3. Las palabras que comiencen con la letra ‘A’. Por ejemplo, si recibe 'Antes de ayer' debe
     devolver 'Antes ayer' """
 
-funcion = input("""¿Que desea hacer? escoja un numero"
-1. Separar las primaras siglas
-2. Capitalizar las primeras letra
-3. Filtrar palabras
-""")
-siglas = ""
+
+try:
+    funcion = int(input("""¿Que desea hacer? escoja un numero"
+    1. Separar las primaras siglas
+    2. Capitalizar las primeras letra
+    3. Filtrar palabras
+    """))
+except:
+    print("Dato invalido")
+    exit()
+
+
+letras = ""
 frase = ""
 
-if funcion == "1":
+if funcion == 1:
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     cadena = (texto.split(" "))
-    for palabra in cadena:
-        siglas = siglas + palabra[0]
-    print(siglas.upper())
-
-elif funcion == "2":
+    # Separa el texto en palabras en la lista "cadena"
+    try:
+        for palabra in cadena:
+            letras = letras + palabra[0]
+        # hace que el string letras solo se quede con la primera letra de la palabra es decir la posicion [0]
+        print(letras.upper())
+    except:
+        print("ingreso de datos erroneo")
+        
+elif funcion == 2:
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     cadena = (texto.split(" "))
-    for palabra in cadena:
-        frase = frase + palabra.capitalize()  + " "
-    print(frase)
+    # Separa el texto en palabras en la lista "cadena"
+    try:
+        for palabra in cadena:
+            frase = frase + palabra.capitalize()  + " "
+        # .capitalize devuelve la misma palabra pero con la primera letra mayuscula
+        print(frase)
+    except:
+        print("ingreso de datos erroneo")
 
-elif funcion == "3":
+elif funcion == 3:
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     Letra = input("Ingrese la letra por la que quiere separar las palabras:")
     cadena = (texto.split(" "))
-    for palabra in cadena:
-        if palabra[0] == Letra or palabra[0] == Letra.upper() :
-            frase = frase + palabra  + " "
-    print(frase)
-
+    # Separa el texto en palabras en la lista "cadena"
+    try:
+        for palabra in cadena:
+            if palabra[0] == Letra or palabra[0] == Letra.upper() :
+                frase = frase + palabra + " "
+        print(frase)
+    except:
+        print("ingreso de datos erroneo")
 else: 
     print("Respuesta invalida")

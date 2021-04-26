@@ -79,21 +79,21 @@ def faltan(dia,mes,anio):
     if valid(dia,mes,anio) == 0:
         return "Fecha no valida"
     elif valid(dia,mes,anio) == 1:
-        fal= mesdia(mes) - (dia)
-        return fal
+        faltandias = mesdia(mes) - (dia)
+        return faltandias
     #primero valida que la fecha sea valida y despues resta el dia que es "dia" a la cantidad de dias que tiene el mes "mesdia(mes)"
 # dias para que termine el mes
 
 def findeaño(dia,mes,anio):
     if valid(dia,mes,anio) == 1:
         mesRestan = 12 - mes
-        r=0
+        Diasrestantes=0
         if mesRestan != 0:
             for i in (range(mes, 12)):     
-                a = mesdia(i+1)  
-                r = r + a  
-        fal = r + faltan(dia,mes,anio)
-        return fal
+                auxiliar = mesdia(i+1)  
+                Diasrestantes = Diasrestantes + auxiliar  
+        faltandias = Diasrestantes + faltan(dia,mes,anio)
+        return faltandias
     else:
         return "Fecha no valida"
 # dias para que termine el anio
