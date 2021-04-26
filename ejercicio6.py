@@ -5,11 +5,14 @@ def compararMayor(n1,n2):
         return n1
     else:
         return n2
-
-num1=float(input("ingrese el primer numero: "))
-num2=float(input("ingrese el segundo numero: "))
-num3=float(input("ingrese el tercer numero: "))
-num4=float(input("ingrese el cuarto numero: "))
+try:
+    num1=float(input("ingrese el primer numero: "))
+    num2=float(input("ingrese el segundo numero: "))
+    num3=float(input("ingrese el tercer numero: "))
+    num4=float(input("ingrese el cuarto numero: "))
+except:
+    print("Ingrese numero por favor")
+    exit()
 
 
 mul1= num1 * num2 

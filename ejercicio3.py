@@ -1,14 +1,20 @@
-""" Implementar un algoritmo (en una o más funciones) que, dado un número entero n, permita calcular su factorial."""
-def factorial(n):
-    if n == 0:
-        r = 0
+""" Implementar un algoritmo (en una o más funciones) que, dado un número entero numero, permita calcular su factorial."""
+def factorial(numero):
+    if numero == 0:
+        factorial = 0
     else:
-        r = 1
-        for i in (range(1, n)):
-            a = r * i
-            r = r + a  
-    return r
+        factorial = 1
+        for posicion in (range(1, numero)):
+            auxiliar = factorial * posicion
+            # print(f"auxiliar = posicion({posicion}) * factorial({factorial}) = {auxiliar}")
+            # factorial1 = factorial
+            factorial = factorial + auxiliar 
+            # print(f"factorial = factorial({factorial1}) + auxiliar({auxiliar}) = {factorial}") 
+    return factorial
+    # en esta funcion lo comentado es para probar el funcionamiento del factorial que al principio no entendi muy bien porque funcionaba
         
-
-n = int(input("ingrese un numero para saber su factorial "))
-print(factorial(n))
+try:
+    numero = int(input("ingrese un numero para saber su factorial "))
+    print(factorial(numero))
+except:
+    print("Dato invalido")

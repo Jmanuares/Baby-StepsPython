@@ -8,19 +8,19 @@
  Calcular el volumen de una esfera dado su radio.
  Dados los catetos de un triángulo rectángulo, calcular su hipotenusa. """
 
-def p_rectangulo(B,H):
-    if B < 1 or H < 1:
+def p_rectangulo(base,altura):
+    if base < 1 or altura < 1:
         print("no ingrese numeros negativos")
     else:
-        perimetro = (B*2 + H*2)
+        perimetro = (base*2 + altura*2)
         return perimetro
     
     
-def a_rectangulo(B,H):
-    if B < 1 or H < 1:
+def a_rectangulo(base,altura):
+    if base < 1 or altura < 1:
         print("no ingrese numeros negativos")
     else:
-        area = (B * H)
+        area = (base * altura)
         return area
 
 
@@ -28,60 +28,66 @@ def a_coordenadas(x1,x2,y1,y2):
     if x1 < 1 or y2 < 1 or y1 < 1 or x2 < 1:
         print("no ingrese numeros negativos")
     else:
-        area = (x2-x1)*(y2-y1)
+        base = (x2-x1)
+        altura = (y2-y1)
+        area = base*altura
         return area
 
-def p_circulo(r):
-    if r < 1:
+def p_circulo(radio):
+    if radio < 1:
         print("no ingrese numeros negativos")
     else:
-        perimetro = (2*r*3.14)
+        perimetro = (2*radio*3.14)
         return perimetro
 
-def a_circulo (r):
-    if r < 1:
+def a_circulo (radio):
+    if radio < 1:
         print("no ingrese numeros negativos")
     else:
-        area = (3.14 * (r**2))
+        area = (3.14 * (radio**2))
         return area
 
-def V_esfera (r):
-    if r < 1:
+def V_esfera (radio):
+    if radio < 1:
         print("no ingrese numeros negativos")
     else:
-        volumen = 4/3 * 3.14 * r ** 3
+        volumen = 4/3 * 3.14 * radio ** 3
         return volumen
 
-def hipotenusa (c1,c2):
-    if c1 < 1 or c2 < 1:
+def hipotenusa (cateto1,cateto2):
+    if cateto1 < 1 or cateto2 < 1:
         print("no ingrese numeros negativos")
     else:
-        hipotenusa = (c1**2+c2**2)**0.5
+        hipotenusa = (cateto1**2+cateto2**2)**0.5
         return hipotenusa
     
 
 
 
-
-funcion = int(input("""¿Que desea hacer? escoja un numero"
-1. perimetro de un rectangulo
-2. area de un rectangulo
-3. area de un rectangulo basado en x e y
-4. perimetro de un circulo
-5. area de un circulo
-6. volumen de una esfera
-7. calcular la hipotenusa
-"""))
+try:
+    funcion = int(input("""¿Que desea hacer? escoja un numero"
+    1. perimetro de un rectangulo
+    2. area de un rectangulo
+    3. area de un rectangulo basado en x e y
+    4. perimetro de un circulo
+    5. area de un circulo
+    6. volumen de una esfera
+    7. calcular la hipotenusa
+    """))
+except:
+    print("Respuesta invalida")
+    exit()
+#pide que funcion se quiere utilizar y valida que sea un numero
 if funcion == 1: 
-    B = int(input("Ingrese la base del rectangulo "))
-    H = int(input("Ingrese la altura del rectangulo "))
-    print(p_rectangulo(B,H))
+    base = int(input("Ingrese la base del rectangulo "))
+    altura = int(input("Ingrese la altura del rectangulo "))
+    print(p_rectangulo(base,altura))
 
 elif funcion == 2:
 
-    B = int(input("Ingrese la base del rectangulo "))
-    H = int(input("Ingrese la altura del rectangulo "))
-    print(a_rectangulo(B,H))
+    base = int(input("Ingrese la base del rectangulo "))
+    altura = int(input("Ingrese la altura del rectangulo "))
+    print(a_rectangulo(base,altura))
 
 elif funcion == 3:
 
@@ -93,26 +99,26 @@ elif funcion == 3:
 
 elif funcion == 4:
 
-    r= int(input("Ingrese el radio del circulo "))
-    print(p_circulo(r))
+    radio= int(input("Ingrese el radio del circulo "))
+    print(p_circulo(radio))
 
 elif funcion == 5:
 
-    r= int(input("Ingrese el radio del circulo "))
-    print(a_circulo(r))
+    radio= int(input("Ingrese el radio del circulo "))
+    print(a_circulo(radio))
 
 elif funcion == 6:
 
-    r= int(input("Ingrese el radio de la esfera "))
-    print(a_circulo(r))
+    radio= int(input("Ingrese el radio de la esfera "))
+    print(a_circulo(radio))
 
 elif funcion == 7:
 
-    c1= int(input("ingrese uno de los cateto"))
-    c2= int(input("ingrese el otro"))
-    print(hipotenusa(c1,c2))
+    cateto1= int(input("ingrese uno de los cateto"))
+    cateto2= int(input("ingrese el otro"))
+    print(hipotenusa(cateto1,cateto2))
 
 else:
-    print("Su respuesta no cumplo parametros")
+    print("Su respuesta no cumple con los parametros")
     
 
