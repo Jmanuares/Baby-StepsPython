@@ -8,36 +8,68 @@
     4. Indique si se trata de un palíndromo. Por ejemplo, 'anita lava la tina' es un palíndromo
     (se lee igual de izquierda a derecha que de derecha a izquierda). """
 vocales=  {
-        "1":"a",
-        "2":"e",
-        "3":"i",
-        "4":"o",
-        "5":"u", 
+        "a":"e",
+        "e":"i",
+        "i":"o",
+        "o":"u",
+        "u":"a",
+        "A":"E",
+        "E":"I",
+        "I":"O",
+        "O":"U",
+        "U":"A",    
         }
+letras = ""
+frase = ""
+letra = ""
+
+def palindromo(palabra):
+    frase = ""
+    for letra in palabra:
+        if not letra in " ":
+            frase = frase + letra 
+    if frase == frase[::-1]:
+        return 1
+    else:
+        return 0
+
 
 funcion = input("""¿Que desea hacer? escoja un numero"
 1. Solo consonantes
 2. Solo vocales
 3. Siguiente vocal
+4. Palindromo
 """)
-palabra = input("ingrese una cadena de caracteres unicode: ")
-letras = ""
+if funcion == "1" or funcion == "2" or funcion == "3" or funcion == "4":
+    palabra = input("ingrese una cadena de caracteres unicode: ")
+    if palabra != "":
+        if funcion == "1": 
+            for letra in palabra:
+                if not letra in "AEIOUaeiou":
+                    letras = letras + letra 
+            print(letras)
 
+        if funcion == "2":
+            for letra in palabra:
+                if letra in "AEIOUaeiou ":
+                    letras = letras + letra 
+            print(letras)
 
-if funcion == "1": 
-    for letra in palabra:
-        if not letra in "AEIOUaeiou":
-            letras = letras + letra 
-    print(letras)
+        if funcion == "3":
+            for letra in palabra:
+                if letra in "AEIOUaeiou":
+                    letra = vocales[str(letra)]
+                frase = frase + letra 
+            print(frase)
 
-if funcion == "2":
-    for letra in palabra:
-        if letra in "AEIOUaeiou ":
-            letras = letras + letra 
-    print(letras)
-if funcion == "3":
-    for letra in palabra:
-        if letra in "AEIOUaeiou ":
-            palabra = letras + letra 
-    print(letras)
-
+        if funcion == "4":
+            if (palindromo(palabra)) == 1:
+                print(f"({palabra}) es un palindromo")
+            elif (palindromo(palabra)) == 0:
+                print(f"({palabra}) no es un palindromo")
+        else:
+            print("Respuesta invalida")
+    else:
+            print("Respuesta invalida")
+else:
+            print("Respuesta invalida")
