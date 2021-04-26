@@ -7,6 +7,7 @@
  Calcular el área de un círculo dado su radio.
  Calcular el volumen de una esfera dado su radio.
  Dados los catetos de un triángulo rectángulo, calcular su hipotenusa. """
+
 def p_rectangulo(B,H):
     if B < 1 or H < 1:
         print("no ingrese numeros negativos")

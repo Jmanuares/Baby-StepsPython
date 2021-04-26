@@ -31,7 +31,7 @@ def longmax(texto,pLarga,pCorta,telegrama):
         # aux Es un auxiliar que me sirve para no tener que llamar a la lista todo el tiempo
         if (len(aux)) >= maxLetras:
             pLarga = pLarga + 1
-        if (len(aux)) < maxLetras:
+        elif (len(aux)) < maxLetras:
             pCorta = pCorta + 1
         costo = (costoC*pCorta) + (costoL*pLarga)
         # En esta parte calculo el coste en base a la cantidad de palabras largas o cortas multiplicadas
@@ -43,7 +43,7 @@ def longmax(texto,pLarga,pCorta,telegrama):
         # B Es un auxiliar que me sirve para saber si la palabra va a tener que tener un STOP al final
         if len(aux)>maxLetras and B == 1:
             aux = aux[0:maxLetras] + "@ " + "STOP"
-        if len(aux)>maxLetras and B != 1:
+        elif len(aux)>maxLetras and B != 1:
             aux = aux[0:maxLetras] + "@"
         # En estos dos if le digo al programa que si supera la cantidad maxima reemplaze lo que sigue por @ y si 
         # el auxiliar B es 1 añada tambien un STOP
