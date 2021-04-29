@@ -21,13 +21,13 @@ while True:
      
     else: 
         print(f"hola {nombre}")
-        auxiliar = 1
+        break
 
     
 try:
     num1 = int(input("Introduzca el primer numero para ser multiplicado "))
     num2 = int(input("Introduzca el segundo numero para ser multiplicado "))
     producto = num1 * num2
-    print (producto)
+    print (f"el producto de ({num1}) y ({num2}) es {producto}")
 except: 
     print("Dato invalido")
