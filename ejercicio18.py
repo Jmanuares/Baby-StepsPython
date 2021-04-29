@@ -14,14 +14,14 @@ texto = input("ingrese una cadena de caracteres unicode: ")
 listapalabrasalrevez=[]
 palabras = texto.split()
 
-def invertir(texto): #Invierte el texto con una lista auxiliar
+def invertir(texto): # Invierte el texto con una lista auxiliar
     palabras = texto.split()
     for i in range(len(palabras)):
         listapalabrasalrevez.append(palabras[-i-1])
     for i in range(len(listapalabrasalrevez)):
         print(listapalabrasalrevez[i])
 
-def invertirLs(texto): #Invierte el texto sin una lista auxiliar
+def invertirLs(texto): # Invierte el texto sin una lista auxiliar
     for i in range(len(palabras)):
         palabras.append(palabras[len(palabras)-i-1])
         palabras.remove(palabras[len(palabras)-i-1])

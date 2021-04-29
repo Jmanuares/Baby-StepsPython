@@ -15,7 +15,7 @@ while True:
     aciertos = 0
     print(resultado)
     try:
-        adivinar= int(input("Adivine el codigo: "))
+        adivinar= int(input("Adivine el codigo(los cuatro digitos deben ser diferentes): "))
         if adivinar > 1000: 
             adivinar = str(adivinar)
             for numero in numRandom:

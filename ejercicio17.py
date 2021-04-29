@@ -50,7 +50,7 @@ def formaciondetelegrama(texto,pLarga,pCorta,telegrama):
         telegrama = telegrama + aux + " "
     telegrama = telegrama.strip()  + "STOPSTOP"
     # Con strip borro los espacios del principio y del final y despues añado STOPSTOP al final indiscriminadamente
- 
+
     print(f"El telegrama se vera asi ({telegrama}), tendra un costo de {costo} y tiene {pCorta} palabras cortas y {pLarga} palabras largas")
 
 formaciondetelegrama(texto,pLarga,pCorta,telegrama)
