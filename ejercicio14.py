@@ -13,7 +13,6 @@ for numero in numRandom:
 while True:
     coincidencia = 0
     aciertos = 0
-    print(resultado)
     try:
         adivinar= int(input("Adivine el codigo(los cuatro digitos deben ser diferentes): "))
         if adivinar > 1000: 
@@ -25,12 +24,12 @@ while True:
             for i in range(1,5):
                     if(adivinar[i-1:i] == resultado[i-1:i]):
                         aciertos +=1
+                        coincidencia -=1
             
-            coincidencia = coincidencia - aciertos
             
             if int(adivinar) != int(resultado):
                 print(f"tuviste {coincidencia} coincidencias y {aciertos} aciertos")
-
+                continue
             elif  int(adivinar) == int(resultado):
                 print("Felicidades ganaste")
             break

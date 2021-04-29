@@ -7,6 +7,6 @@ def conversion(Faren):
     return Celsius
 try:
     faren = int(input("Ingrese grados Farenheit "))
-    print(conversion(faren))
+    print(f"{conversion(faren)} F")
 except:
     print("Dato invalido")
