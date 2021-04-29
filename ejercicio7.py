@@ -1,7 +1,7 @@
 
 """ 7.Escribir funciones que resuelvan los siguientes problemas:
 
-1. Dado un anio indicar si es esbisiesto. (Nota: un anio es esbisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400).
+1. Dado un anio indicar si es bisiesto. (Nota: un anio es bisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400).
 2. Dado un mes, devolver la cantidad de días correspondientes.
 3. Dada una fecha (día, mes, anio), indicar si es válida o no.
 4. Dada una fecha, indicar los días que faltan hasta fin de mes.
@@ -50,12 +50,12 @@ def esbisiesto(anio):
             return 1
         else:
             return 0
-# si el anio es esbisiesto 1 es que es y 0 es que no
+# si el anio es bisiesto 1 es que es y 0 es que no
 
 def diasenmes(mes):
     if esbisiesto(anio) == 1:
         dias["2"] = 29
-        #si el año es esbisiesto febrero ( que es 2 ) va a tener 29 dias
+        #si el año es bisiesto febrero ( que es 2 ) va a tener 29 dias
     return dias[str(mes)]
     # llama al diccionario dias definido previamente
 # cuantos dias hay en el mes
@@ -65,7 +65,7 @@ def fechavalida(dia,mes,anio):
         return 0
     elif dia > 0:
         if 0 < mes and mes < 13:
-            if dia f diasenmes(mes):
+            if dia > diasenmes(mes):
                 return 0
             else:
                 return 1
@@ -79,10 +79,10 @@ def faltan(dia,mes,anio):
     if fechavalida(dia,mes,anio) == 0:
         return "Fecha no valida"
     elif fechavalida(dia,mes,anio) == 1:
-        faltandias f diasenmes(mes) - (dia)
+        faltandias = diasenmes(mes) - (dia)
         return faltandias
-    #primero valida que la fecha sea valida y despues resta el dia que es "dia" a la cantidad de dias que tiene el mesf diasenmes(mes)"
-# dias para que termine el mes
+"""  primero valida que la fecha sea valida y despues difdias el dia que es "dia" a la cantidad de dias que tiene el mes "diasenmes(mes)"
+dias para que termine el mes """
 
 def diashastafindeaño(dia,mes,anio):
     if fechavalida(dia,mes,anio) == 1:
@@ -90,7 +90,7 @@ def diashastafindeaño(dia,mes,anio):
         Diasrestantes=0
         if mesRestan != 0:
             for i in (range(mes, 12)):     
-                auxiliar f diasenmes(i+1)  
+                auxiliar = diasenmes(i+1)  
                 Diasrestantes = Diasrestantes + auxiliar  
         faltandias = Diasrestantes + faltan(dia,mes,anio)
         return faltandias
@@ -112,24 +112,35 @@ def diastranscurridos(dia,mes,anio):
 
 def difFechas(dia,mes,anio,dia2,mes2,anio2):
     if fechavalida(dia,mes,anio) == 1 or fechavalida(dia2,mes2,anio2) == 1:
-        resta = diastranscurridos(dia2,mes2,anio2) + diashastafindeaño(dia,mes,anio)
+        difdias = diastranscurridos(dia2,mes2,anio2) + diashastafindeaño(dia,mes,anio)
         anios = anio2 - anio
-        anio = 0
+        aniosquepasaron = 0
         meses = 0
         dias = 0
-        for i in range(1,anios):
-            resta = resta + 365
-        while resta != 0:
-            if resta - 365 >= 0:
-                resta = resta - 365
-                anio = anio + 1
-            elif resta - 30 >= 0:
-                resta = resta - 30
-                meses = meses + 1
-            elif resta - 1 >= 0:
-                resta = resta - 1
-                dias = dias + 1
-        return (f"entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {dias} dias, {meses} meses y {anio} anios")
+        if anios == 0:
+            difdias = 365 - (diashastafindeaño(dia2, mes2, anio2) + diastranscurridos(dia, mes,anio))
+            while difdias != 0:
+                if difdias - 30 >= 0:
+                    difdias = difdias - 30
+                    meses = meses + 1
+                elif difdias - 1 >= 0:
+                    difdias = difdias - 1
+                    dias = dias + 1
+            return (f"entre la fecha {dia}/{mes}/{aniosquepasaron} y {dia2}/{mes2}/{anio2} hay {dias} dias y {meses} meses")
+        else:
+            for i in range(1,anios):
+                difdias = difdias + 365
+            while difdias != 0:
+                if difdias - 365 >= 0:
+                    difdias = difdias - 365
+                    aniosquepasaron = aniosquepasaron+ 1
+                elif difdias - 30 >= 0:
+                    difdias = difdias - 30
+                    meses = meses + 1
+                elif difdias - 1 >= 0:
+                    difdias = difdias - 1
+                    dias = dias + 1
+            return (f"entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {dias} dias, {meses} meses y {aniosquepasaron} anios")
     else:
         return "Fecha invalida"
 # diferencia entre dos fechas dadas por el usuario
@@ -140,10 +151,10 @@ if func == 1:
         anio = int(input("ingrese el anio "))
 
         if esbisiesto(anio) == 1:
-            print(f"el anio {anio} es esbisiesto")
+            print(f"el anio {anio} es bisiesto")
 
         elif esbisiesto(anio) == 0:
-            print(f"el anio {anio} no es esbisiesto")
+            print(f"el anio {anio} no es bisiesto")
     except:
         print("Respuesta invalida")
 
@@ -158,13 +169,12 @@ elif func == 2:
         anio= int(input("Ingrese el anio "))
 
         if fechavalida(1,int(mes),1) == 1:
-            print(f"Tienef diasenmes(int(mes))} Dias")
+            print(f"Tiene {diasenmes(int(mes))} Dias")
         else:
             print("Mes no valido")
 
     except:
         print("Respuesta invalida")
-
 
 elif func == 3: 
     try:
@@ -178,7 +188,6 @@ elif func == 3:
     except:
         print("Fecha invalida")
 
-
 elif func == 4:
     try: 
         dia= (int(input("Ingrese el dia ")))
@@ -187,7 +196,6 @@ elif func == 4:
         print(faltan(dia,mes,anio))
     except:
         print("Respuesta invalida")
-
 
 elif func == 5: 
     try:
@@ -198,7 +206,6 @@ elif func == 5:
     except:
         print("Respuesta invalida")
 
-
 elif func == 6: 
     try:
         dia= int(input("Ingrese el dia "))
@@ -207,7 +214,6 @@ elif func == 6:
         print(diastranscurridos(dia,mes,anio))
     except:
         print("Respuesta invalida") 
-
 
 elif func == 7:
     try:
@@ -222,7 +228,6 @@ elif func == 7:
         print(difFechas(dia,mes,anio,dia2,mes2,anio2))
     except:
         print("Respuesta invalida")
-
 
 else:
     print("Respuesta invalida")
