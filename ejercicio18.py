@@ -8,20 +8,20 @@
 funcion = input("""¿Que desea hacer? (son iguales)
 1. invertir texto con lista auxiliar
 2. invertir texto sin lista auxiliar 
- """)
+""")
 texto = input("ingrese una cadena de caracteres unicode: ")
 
-palabrasR=[]
+listapalabrasalrevez=[]
 palabras = texto.split()
 
-def invertir(texto):
+def invertir(texto): #Invierte el texto con una lista auxiliar
     palabras = texto.split()
     for i in range(len(palabras)):
-        palabrasR.append(palabras[-i-1])
-    for i in range(len(palabrasR)):
-        print(palabrasR[i])
+        listapalabrasalrevez.append(palabras[-i-1])
+    for i in range(len(listapalabrasalrevez)):
+        print(listapalabrasalrevez[i])
 
-def invertirLs(texto):
+def invertirLs(texto): #Invierte el texto sin una lista auxiliar
     for i in range(len(palabras)):
         palabras.append(palabras[len(palabras)-i-1])
         palabras.remove(palabras[len(palabras)-i-1])

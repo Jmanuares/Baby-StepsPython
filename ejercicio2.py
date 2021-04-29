@@ -47,7 +47,7 @@ def a_circulo (radio):
         area = (3.14 * (radio**2))
         return area
 
-def V_esfera (radio):
+def v_esfera (radio):
     if radio < 1:
         print("no ingrese numeros negativos")
     else:

@@ -1,7 +1,7 @@
 
 """ 7.Escribir funciones que resuelvan los siguientes problemas:
 
-1. Dado un anio indicar si es bisiesto. (Nota: un anio es bisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400).
+1. Dado un anio indicar si es esbisiesto. (Nota: un anio es esbisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400).
 2. Dado un mes, devolver la cantidad de días correspondientes.
 3. Dada una fecha (día, mes, anio), indicar si es válida o no.
 4. Dada una fecha, indicar los días que faltan hasta fin de mes.
@@ -39,7 +39,7 @@ except:
     exit()
 # eleccion de la funcion y un tryexcept para que el usuario no use strings ni campo vacio
 
-def bisiesto(anio):
+def esbisiesto(anio):
     if anio % 4 == 0 and anio % 100 == 0:
         if anio % 400 == 0:
             return 1
@@ -50,22 +50,22 @@ def bisiesto(anio):
             return 1
         else:
             return 0
-# si el anio es bisiesto 1 es que es y 0 es que no
+# si el anio es esbisiesto 1 es que es y 0 es que no
 
-def mesdia(mes):
-    if bisiesto(anio) == 1:
+def diasenmes(mes):
+    if esbisiesto(anio) == 1:
         dias["2"] = 29
-        #si el año es bisiesto febrero ( que es 2 ) va a tener 29 dias
+        #si el año es esbisiesto febrero ( que es 2 ) va a tener 29 dias
     return dias[str(mes)]
     # llama al diccionario dias definido previamente
 # cuantos dias hay en el mes
 
-def valid(dia,mes,anio):
+def fechavalida(dia,mes,anio):
     if dia == "" or mes == "" or anio == "":
         return 0
     elif dia > 0:
         if 0 < mes and mes < 13:
-            if dia > mesdia(mes):
+            if dia f diasenmes(mes):
                 return 0
             else:
                 return 1
@@ -76,21 +76,21 @@ def valid(dia,mes,anio):
 # validar fecha
 
 def faltan(dia,mes,anio):
-    if valid(dia,mes,anio) == 0:
+    if fechavalida(dia,mes,anio) == 0:
         return "Fecha no valida"
-    elif valid(dia,mes,anio) == 1:
-        faltandias = mesdia(mes) - (dia)
+    elif fechavalida(dia,mes,anio) == 1:
+        faltandias f diasenmes(mes) - (dia)
         return faltandias
-    #primero valida que la fecha sea valida y despues resta el dia que es "dia" a la cantidad de dias que tiene el mes "mesdia(mes)"
+    #primero valida que la fecha sea valida y despues resta el dia que es "dia" a la cantidad de dias que tiene el mesf diasenmes(mes)"
 # dias para que termine el mes
 
-def findeaño(dia,mes,anio):
-    if valid(dia,mes,anio) == 1:
+def diashastafindeaño(dia,mes,anio):
+    if fechavalida(dia,mes,anio) == 1:
         mesRestan = 12 - mes
         Diasrestantes=0
         if mesRestan != 0:
             for i in (range(mes, 12)):     
-                auxiliar = mesdia(i+1)  
+                auxiliar f diasenmes(i+1)  
                 Diasrestantes = Diasrestantes + auxiliar  
         faltandias = Diasrestantes + faltan(dia,mes,anio)
         return faltandias
@@ -99,20 +99,20 @@ def findeaño(dia,mes,anio):
 # dias para que termine el anio
 
 def diastranscurridos(dia,mes,anio):
-    if valid(dia,mes,anio) == 1:
+    if fechavalida(dia,mes,anio) == 1:
         diastrans=0
-        if bisiesto(anio) == 1:
-            diastrans = 366 - findeaño(dia,mes,anio)
-        elif bisiesto(anio) == 0:
-            diastrans = 365 - findeaño(dia,mes,anio)
+        if esbisiesto(anio) == 1:
+            diastrans = 366 - diashastafindeaño(dia,mes,anio)
+        elif esbisiesto(anio) == 0:
+            diastrans = 365 - diashastafindeaño(dia,mes,anio)
         return diastrans
     else:
         return "Fecha no valida"
 # dias trancurridos del anio
 
 def difFechas(dia,mes,anio,dia2,mes2,anio2):
-    if valid(dia,mes,anio) == 1 or valid(dia2,mes2,anio2) == 1:
-        resta = diastranscurridos(dia2,mes2,anio2) + findeaño(dia,mes,anio)
+    if fechavalida(dia,mes,anio) == 1 or fechavalida(dia2,mes2,anio2) == 1:
+        resta = diastranscurridos(dia2,mes2,anio2) + diashastafindeaño(dia,mes,anio)
         anios = anio2 - anio
         anio = 0
         meses = 0
@@ -139,11 +139,11 @@ if func == 1:
     try:
         anio = int(input("ingrese el anio "))
 
-        if bisiesto(anio) == 1:
-            print(f"el anio {anio} es bisiesto")
+        if esbisiesto(anio) == 1:
+            print(f"el anio {anio} es esbisiesto")
 
-        elif bisiesto(anio) == 0:
-            print(f"el anio {anio} no es bisiesto")
+        elif esbisiesto(anio) == 0:
+            print(f"el anio {anio} no es esbisiesto")
     except:
         print("Respuesta invalida")
 
@@ -157,8 +157,8 @@ elif func == 2:
 
         anio= int(input("Ingrese el anio "))
 
-        if valid(1,int(mes),1) == 1:
-            print(f"Tiene {mesdia(int(mes))} Dias")
+        if fechavalida(1,int(mes),1) == 1:
+            print(f"Tienef diasenmes(int(mes))} Dias")
         else:
             print("Mes no valido")
 
@@ -171,7 +171,7 @@ elif func == 3:
         dia= (int(input("Ingrese el dia ")))
         mes= (int(input("Ingrese el mes ")))
         anio= (int(input("Ingrese el anio ")))
-        if valid(dia,mes,anio) == 1:
+        if fechavalida(dia,mes,anio) == 1:
             print(f"la fecha {dia}/{mes}/{anio} es valida")
         else:
             print(f"la fecha {dia}/{mes}/{anio} es invalida")
@@ -194,7 +194,7 @@ elif func == 5:
         dia= int(input("Ingrese el dia "))
         mes= int(input("Ingrese el mes "))
         anio= int(input("Ingrese el anio "))
-        print(findeaño(dia,mes,anio))
+        print(diashastafindeaño(dia,mes,anio))
     except:
         print("Respuesta invalida")
 

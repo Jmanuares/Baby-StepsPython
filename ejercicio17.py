@@ -20,7 +20,7 @@ pLarga = 0
 pCorta = 0
 telegrama = ""
 
-def longmax(texto,pLarga,pCorta,telegrama):
+def formaciondetelegrama(texto,pLarga,pCorta,telegrama):
     costo = 0
     palabras = texto.split(" ")
     # divido el texto por " " en una lista llamada palabras
@@ -34,8 +34,8 @@ def longmax(texto,pLarga,pCorta,telegrama):
         elif (len(aux)) < maxLetras:
             pCorta = pCorta + 1
         costo = (costoC*pCorta) + (costoL*pLarga)
-        # En esta parte calculo el coste en base a la cantidad de palabras largas o cortas multiplicadas
-        # por su coste
+        """ En esta parte calculo el coste en base a la cantidad de palabras largas o cortas multiplicadas
+        por su coste """
         B = 0
         for letra in aux:
             if letra in ".":
@@ -45,12 +45,12 @@ def longmax(texto,pLarga,pCorta,telegrama):
             aux = aux[0:maxLetras] + "@ " + "STOP"
         elif len(aux)>maxLetras and B != 1:
             aux = aux[0:maxLetras] + "@"
-        # En estos dos if le digo al programa que si supera la cantidad maxima reemplaze lo que sigue por @ y si 
-        # el auxiliar B es 1 añada tambien un STOP
+        """ En estos dos if le digo al programa que si supera la cantidad maxima reemplaze lo que sigue por @ y si 
+        el auxiliar B es 1 añada tambien un STOP """
         telegrama = telegrama + aux + " "
     telegrama = telegrama.strip()  + "STOPSTOP"
     # Con strip borro los espacios del principio y del final y despues añado STOPSTOP al final indiscriminadamente
  
     print(f"El telegrama se vera asi ({telegrama}), tendra un costo de {costo} y tiene {pCorta} palabras cortas y {pLarga} palabras largas")
 
-longmax(texto,pLarga,pCorta,telegrama)
+formaciondetelegrama(texto,pLarga,pCorta,telegrama)
