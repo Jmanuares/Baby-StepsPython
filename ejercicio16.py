@@ -59,7 +59,7 @@ def palindromo(palabra): #indica si el texto es un palindromo
 
 try:
     funcion = int(input("""¿Que desea hacer? escoja un numero"
-    1. Solo soloconsonantes
+    1. Solo solo consonantes
     2. Solo vocales
     3. Siguiente vocal
     4. Palindromo
