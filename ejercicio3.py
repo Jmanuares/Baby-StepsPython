@@ -1,5 +1,7 @@
 """ Implementar un algoritmo (en una o más funciones) que, dado un número entero numero, permita calcular su factorial."""
-def factorial(numero):
+
+
+def factorial(numero): # calcula el factorial de un numero
     if numero == 0:
         factorial = 0
     else:
@@ -12,7 +14,8 @@ def factorial(numero):
             # print(f"factorial = factorial({factorial1}) + auxiliar({auxiliar}) = {factorial}") 
     return factorial
     # en esta funcion lo comentado es para probar el funcionamiento del factorial que al principio no entendi muy bien porque funcionaba
-        
+
+
 try:
     numero = int(input("ingrese un numero para saber su factorial "))
     print(factorial(numero))

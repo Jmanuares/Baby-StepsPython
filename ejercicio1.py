@@ -5,6 +5,7 @@ Dos números, y luego muestre el producto. """
 
 from helper import numero
 
+
 while True:
     valido = 1
     nombre = input("Introduzca su nombre ")

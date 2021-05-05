@@ -1,10 +1,15 @@
 """ Utilizando la función randrange del módulo random, escribir un programa que tenga un número aleatorio secreto, y luego permita al usuario ingresar números
  y le indique si son menores o mayores que el número a adivinar, hasta que el usuario ingrese el número correcto """
+
+
 import random
 from helper import numero
-numRandom = (random.randrange(1, 1000))
 
-while True:
+
+numRandom = (random.randrange(1, 1000))
+# genera un numero random
+
+while True: # compara si el numero ingresado es mayor, menor o igual y se lo dice al usuario
     numAdivinado = input("""Adivina un numero del 1 al 1000
     """)
     if not numero(numAdivinado):

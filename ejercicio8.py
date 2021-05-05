@@ -4,13 +4,14 @@ Info = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"
            (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
 
 
-def convertirRom(numero):
+def convertirRom(numero): # Convierte el numero dado al mismo numero en romanos
     romanos = ""
     while numero > 0:
         for lsNume, lsLetra in Info:
             while numero >= lsNume:
                 romanos = romanos + lsLetra
                 numero = numero - lsNume
+    # utiliza la lista info y a medida que le va restando el numero de la lista que puede ira sumando a un string las letras
     return romanos
 
 

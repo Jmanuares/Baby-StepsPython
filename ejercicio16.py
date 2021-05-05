@@ -19,9 +19,9 @@ vocales=  {
         "O":"U",
         "U":"A",    
         }
+# diccionario de letras vocales para el ultimo ejercicio
 
-
-def soloconsonantes(): #saca las vocales del texto dado
+def soloConsonantes(): #saca las vocales del texto dado
     frase = ""
     for letra in palabra:
                 if not letra in "AEIOUaeiou":
@@ -29,20 +29,22 @@ def soloconsonantes(): #saca las vocales del texto dado
     return frase
 
 
-def solovocales(): #saca las consonantes del texto dado
+def soloVocales(): #saca las consonantes del texto dado
     frase = ""
     for letra in palabra:
             if letra in "AEIOUaeiou ":
                 frase = frase + letra 
     return frase
 
-def siguientevocal(): #cambia las vocales del texto dado a la siguiente por ejemplo si es a va a ser e
+
+def siguienteVocal(): #cambia las vocales del texto dado a la siguiente por ejemplo si es a va a ser e
     frase = ""
     for letra in palabra:
             if letra in "AEIOUaeiou":
                 letra = vocales[str(letra)]
             frase = frase + letra 
     return frase
+
 
 def palindromo(palabra): #indica si el texto es un palindromo
     frase = palabra.replace(" ","")
@@ -51,7 +53,7 @@ def palindromo(palabra): #indica si el texto es un palindromo
     for letra in palabra:
         if not letra in " ":
             frase = frase + letra  """
-    if frase == frase[::-1]:
+    if frase == frase[::-1]: #[::-1] da vuelta la frase
         return 1
     else:
         return 0
@@ -68,25 +70,32 @@ except:
     print("Dato invalido")
     exit()
 
-
+# Una interfaz para elegir la funcion
 if funcion == 1 or funcion == 2 or funcion == 3 or funcion == 4:
     palabra = input("ingrese una cadena de caracteres unicode: ")
     frase = ""
     letra = ""
+
+
     if funcion == 1: 
-        print(soloconsonantes())
+        print(soloConsonantes())
+
 
     elif funcion == 2:
-        print(solovocales())
+        print(soloVocales())
+
 
     elif funcion == 3:
-        print(siguientevocal())
+        print(siguienteVocal())
+
 
     elif funcion == 4:
         if (palindromo(palabra)) == 1:
             print(f"({palabra}) es un palindromo")
         elif (palindromo(palabra)) == 0:
             print(f"({palabra}) no es un palindromo")
+
+
     elif palabra == "":
         print("ingreso de datos erroneo")
 else:

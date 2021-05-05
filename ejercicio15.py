@@ -9,7 +9,7 @@
 
 try:
     funcion = int(input("""¿Que desea hacer? escoja un numero"
-    1. Separar las primaras siglas
+    1. Separar las primeras siglas
     2. Capitalizar las primeras letra
     3. Filtrar palabras
     """))
@@ -21,7 +21,8 @@ except:
 letras = ""
 frase = ""
 
-if funcion == 1:
+
+if funcion == 1: # Separar las primaras siglas y las muestra en mayusculas
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     cadena = (texto.split(" "))
     # Separa el texto en palabras en la lista "cadena"
@@ -32,8 +33,9 @@ if funcion == 1:
         print(letras.upper())
     except:
         print("ingreso de datos erroneo")
-        
-elif funcion == 2:
+
+
+elif funcion == 2: # Capitaliza las primer letra de cada palabra
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     cadena = (texto.split(" "))
     # Separa el texto en palabras en la lista "cadena"
@@ -45,7 +47,8 @@ elif funcion == 2:
     except:
         print("ingreso de datos erroneo")
 
-elif funcion == 3:
+
+elif funcion == 3: # Filtra palabras que empiecen por la letra que da el usuario
     texto = input("Ingrese una cadena de caracteres Unicode: ")
     Letra = input("Ingrese la letra por la que quiere separar las palabras:")
     cadena = (texto.split(" "))

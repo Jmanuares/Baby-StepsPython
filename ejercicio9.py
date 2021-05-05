@@ -6,9 +6,12 @@ Modificar el programa anterior para que sea una función que devuelva si el usua
 
 from time import sleep
 
+
 espera = 0
 intentos = 0
-def valid(password):
+
+
+def valid(password): # valida la contraseña (RE complicado)
     if password == "contraseña123":    
         return 1
     else:
@@ -19,15 +22,20 @@ while intentos != 5:
     if valid(password) != 1:
         print("""CONTRASEÑA INCORRECTA
         Por favor espere""")
+
         espera = espera + 2
         intentos = intentos + 1
         cont = espera
-        for i in range(1,espera + 1):
+        for i in range(1,espera + 1): 
             cont = cont - 1
             sleep(1)
             print(cont + 1)
+        # hace al usuario esperar y le muestra al usuario cuanto tiene que esperar
+
     else:
         print("CONTRASEÑA CORRECTA")
         break
+
+
 if intentos == 5:
     print("CANTIDAD DE INTENTOS MAXIMA ALCANZADA")

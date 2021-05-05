@@ -20,7 +20,7 @@ pLarga = 0
 pCorta = 0
 telegrama = ""
 
-def formaciondetelegrama(texto,pLarga,pCorta,telegrama):
+def formacionTelegrama(texto,pLarga,pCorta,telegrama):
     costo = 0
     palabras = texto.split(" ")
     # divido el texto por " " en una lista llamada palabras
@@ -53,4 +53,4 @@ def formaciondetelegrama(texto,pLarga,pCorta,telegrama):
 
     print(f"El telegrama se vera asi ({telegrama}), tendra un costo de {costo} y tiene {pCorta} palabras cortas y {pLarga} palabras largas")
 
-formaciondetelegrama(texto,pLarga,pCorta,telegrama)
+formacionTelegrama(texto,pLarga,pCorta,telegrama)
