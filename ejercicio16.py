@@ -21,7 +21,10 @@ vocales=  {
         }
 # diccionario de letras vocales para el ultimo ejercicio
 
-def soloConsonantes(): #saca las vocales del texto dado
+def soloConsonantes(palabra):
+    """ Recibe:
+            palabra:<string>
+    saca las vocales del texto dado """
     frase = ""
     for letra in palabra:
                 if not letra in "AEIOUaeiou":
@@ -29,7 +32,10 @@ def soloConsonantes(): #saca las vocales del texto dado
     return frase
 
 
-def soloVocales(): #saca las consonantes del texto dado
+def soloVocales(palabra):
+    """ Recibe:
+            palabra:<string>
+    saca las consonantes del texto dado """
     frase = ""
     for letra in palabra:
             if letra in "AEIOUaeiou ":
@@ -37,7 +43,10 @@ def soloVocales(): #saca las consonantes del texto dado
     return frase
 
 
-def siguienteVocal(): #cambia las vocales del texto dado a la siguiente por ejemplo si es a va a ser e
+def siguienteVocal(): 
+    """ Recibe:
+            palabra:<string>
+    cambia las vocales del texto dado a la siguiente por ejemplo si es a va a ser e """
     frase = ""
     for letra in palabra:
             if letra in "AEIOUaeiou":
@@ -46,7 +55,10 @@ def siguienteVocal(): #cambia las vocales del texto dado a la siguiente por ejem
     return frase
 
 
-def palindromo(palabra): #indica si el texto es un palindromo
+def palindromo(palabra):
+    """ Recibe:
+            palabra:<string>
+    indica si el texto es un palindromo """
     frase = palabra.replace(" ","")
     """ esta funcion es la funcion replace por si no se podia utilizar
     frase = "" 
@@ -70,7 +82,7 @@ except:
     print("Dato invalido")
     exit()
 
-# Una interfaz para elegir la funcion
+""" Una interfaz para elegir la funcion """
 if funcion == 1 or funcion == 2 or funcion == 3 or funcion == 4:
     palabra = input("ingrese una cadena de caracteres unicode: ")
     frase = ""

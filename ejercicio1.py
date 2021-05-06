@@ -7,6 +7,7 @@ from helper import numero
 
 
 while True:
+    """ pide un nombre y saluda a la persona """
     valido = 1
     nombre = input("Introduzca su nombre ")
     for letra in nombre:
@@ -26,6 +27,7 @@ while True:
 
     
 try:
+    """ pide dos numero y calculo el producto entre ellos """
     num1 = int(input("Introduzca el primer numero para ser multiplicado "))
     num2 = int(input("Introduzca el segundo numero para ser multiplicado "))
     producto = num1 * num2

@@ -11,7 +11,10 @@ espera = 0
 intentos = 0
 
 
-def valid(password): # valida la contraseña (RE complicado)
+def valid(password):
+    """ Recibe:
+            password:<string>
+    valida la contraseña """
     if password == "contraseña123":    
         return 1
     else:

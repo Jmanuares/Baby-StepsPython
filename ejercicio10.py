@@ -9,7 +9,8 @@ from helper import numero
 numRandom = (random.randrange(1, 1000))
 # genera un numero random
 
-while True: # compara si el numero ingresado es mayor, menor o igual y se lo dice al usuario
+while True:
+    """ compara si el numero ingresado es mayor, menor o igual y se lo dice al usuario """
     numAdivinado = input("""Adivina un numero del 1 al 1000
     """)
     if not numero(numAdivinado):

@@ -4,11 +4,16 @@ revise un grupo de exámenes. Para ello, en cada paso debe preguntar la cantidad
 por el alumno, indicando con un valor centinela que no hay más exámenes a revisar.
 Debe mostrar por pantalla el porcentaje correspondiente a la cantidad de ejercicios resueltos 
 respecto a la cantidad de ejercicios del examen y una leyenda que indique si aprobó o no. """
+
+
 import helper
 
 
-def aprobo(n): # dice si aprobo o no (RE complicado como el 9)
-    if n > nota or n == nota:
+def aprobo(porcentaje): 
+    """     Recibe:
+            porcentaje:<int>
+    dice si aprobo o no  """
+    if porcentaje > nota or porcentaje == nota:
         return 1
     else:
         return 0   

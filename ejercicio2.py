@@ -9,7 +9,11 @@
  Dados los catetos de un triángulo rectángulo, calcular su hipotenusa. """
 
 
-def perimetroRectangulo(base,altura): # calcula el perimetro de un rectangulo en base a la base y a la altura
+def perimetroRectangulo(base,altura):
+    """ Recibe:
+            base:<int>
+            altura:<int>
+    calcula el perimetro de un rectangulo en base a la base y a la altura """
     if base < 1 or altura < 1:
         print("no ingrese numeros negativos")
     else:
@@ -17,7 +21,11 @@ def perimetroRectangulo(base,altura): # calcula el perimetro de un rectangulo en
         return perimetro
 
 
-def areaRectangulo(base,altura): # calcula el area de un rectangulo en base a la base y a la altura
+def areaRectangulo(base,altura):
+    """ Recibe:
+            base:<int>
+            altura:<int>
+    calcula el area de un rectangulo en base a la base y a la altura """
     if base < 1 or altura < 1:
         print("no ingrese numeros negativos")
     else:
@@ -26,7 +34,12 @@ def areaRectangulo(base,altura): # calcula el area de un rectangulo en base a la
 
 
 def areaCoordenadas(x1,x2,y1,y2): 
-    # calcula el area de un rectangulo en base a la base y a la altura determinados por coordenadas 
+    """ Recibe:
+            x1:<int>
+            x2:<int>
+            y1:<int>
+            y2:<int>
+    calcula el area de un rectangulo en base a la base y a la altura determinados por coordenadas """ 
     if x1 < 1 or y2 < 1 or y1 < 1 or x2 < 1:
         print("no ingrese numeros negativos")
     else:
@@ -37,7 +50,10 @@ def areaCoordenadas(x1,x2,y1,y2):
     # x1 sera la x en donde empieza el rectangulo y x2 donde termina lo mismo en y para y1 e y2
 
 
-def perimetroCirculo(radio): # calcula el perimetro de un circulo en base al radio
+def perimetroCirculo(radio): 
+    """ Recibe:
+            radio:<int>
+    calcula el perimetro de un circulo en base al radio """
     if radio < 1:
         print("no ingrese numeros negativos")
     else:
@@ -45,7 +61,10 @@ def perimetroCirculo(radio): # calcula el perimetro de un circulo en base al rad
         return perimetro
 
 
-def areaCirculo (radio): # calcula el area de un circulo en base al radio
+def areaCirculo (radio):
+    """ Recibe:
+            radio:<int>
+    calcula el area de un circulo en base al radio """
     if radio < 1:
         print("no ingrese numeros negativos")
     else:
@@ -53,7 +72,10 @@ def areaCirculo (radio): # calcula el area de un circulo en base al radio
         return area
 
 
-def volumeneEsfera (radio): # calcula el volumen de una esfera en base al radio
+def volumeneEsfera (radio):
+    """ Recibe:
+            radio:<int>
+    calcula el volumen de una esfera en base al radio """
     if radio < 1:
         print("no ingrese numeros negativos")
     else:
@@ -61,7 +83,11 @@ def volumeneEsfera (radio): # calcula el volumen de una esfera en base al radio
         return volumen
 
 
-def hipotenusa (cateto1,cateto2): # calcula la hipotenusa un triangulo en base a sus dos catetos
+def hipotenusa (cateto1,cateto2):
+    """ Recibe:
+            cateto1:<int>
+            cateto2:<int>
+    calcula la hipotenusa un triangulo en base a sus dos catetos """
     if cateto1 < 1 or cateto2 < 1:
         print("no ingrese numeros negativos")
     else:
@@ -83,7 +109,7 @@ try:
 except:
     print("Respuesta invalida")
     exit()
-#pide que funcion se quiere utilizar y valida que sea un numero
+""" pide que funcion se quiere utilizar y valida que sea un numero """
 
 
 if funcion == 1: 

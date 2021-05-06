@@ -4,7 +4,7 @@ import random
 
 
 numRandom = str(random.randrange(1000, 9999))
-# genera un numero random de 4 cifras
+""" genera un numero random de 4 cifras """
 resultado = ""
 aciertos = 0
 
@@ -13,9 +13,10 @@ for numero in numRandom:
     while numero in resultado:
         numero = str(random.randrange(0, 9))
     resultado = resultado + numero
-#hace que el numero random no repita cifras
+""" hace que el numero random no repita cifras """
 
-while True: # dice cuantas coincidencias o aciertos entre el numero random y el codigo adivinado
+while True: 
+    """ dice cuantas coincidencias o aciertos entre el numero random y el codigo adivinado """
 
     coincidencia = 0
     aciertos = 0

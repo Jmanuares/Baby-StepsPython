@@ -19,7 +19,10 @@ except:
 listapalabrasalrevez=[]
 palabras = texto.split()
 
-def invertir(texto): # Invierte el texto con una lista auxiliar
+def invertir(texto):
+    """ Recibe:
+        texto:<string>
+    Invierte el texto con una lista auxiliar """
     palabras = texto.split()
     for i in range(len(palabras)): # añade las palabras de la lista "palabras" a una lista vacia "listapalabrasalrevez" pero de atras para adelante
         listapalabrasalrevez.append(palabras[-i-1])
@@ -27,7 +30,10 @@ def invertir(texto): # Invierte el texto con una lista auxiliar
         print(listapalabrasalrevez[i])
 
 
-def invertirLs(texto): # Invierte el texto sin una lista auxiliar
+def invertirLs(texto):
+    """Recibe:
+        texto:<string>
+    Invierte el texto sin una lista auxiliar """
     for i in range(len(palabras)):
         palabras.append(palabras[len(palabras)-i-1])
         palabras.remove(palabras[len(palabras)-i-1])

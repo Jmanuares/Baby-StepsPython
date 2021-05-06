@@ -28,6 +28,7 @@ dias = {
 
 
 try:
+    """ eleccion de la funcion """ 
     func= int(input("""Que funcion desea realizar
     1.Bisiesto
     2.Dias del mes
@@ -40,10 +41,13 @@ try:
 except:
     print("Respuesta invalida")
     exit()
-# eleccion de la funcion y un tryexcept para que el usuario no use strings ni campo vacio
+# tryexcept para que el usuario no use strings ni campo vacio
 
 
-def esBisiesto(anio): # si el anio es bisiesto 1 es que es y 0 es que no
+def esBisiesto(anio):
+    """ Recibe:
+            anio:<int>
+    Indica si el año ingresado es bisiesto """
     if anio % 4 == 0 and anio % 100 == 0:
         if anio % 400 == 0:
             return 1
@@ -58,7 +62,10 @@ def esBisiesto(anio): # si el anio es bisiesto 1 es que es y 0 es que no
             return 0
 
 
-def diasMes(mes):  # cuantos dias hay en el mes
+def diasMes(mes):
+    Recibe:
+            mes:<int>
+    indica cuantos dias hay en el mes
     if esBisiesto(anio) == 1:
         dias["2"] = 29
         #si el año es bisiesto febrero ( que es 2 ) va a tener 29 dias
@@ -66,7 +73,12 @@ def diasMes(mes):  # cuantos dias hay en el mes
     # llama al diccionario dias definido previamente
 
 
-def fechaValida(dia,mes,anio): # valida la fecha ingresada
+def fechaValida(dia,mes,anio): 
+    """ Recibe:
+            dia:<int>
+            mes:<int>
+            anio:<int>
+    valida la fecha ingresada """
     if dia == "" or mes == "" or anio == "":
         return 0
     elif dia > 0:
@@ -84,7 +96,12 @@ def fechaValida(dia,mes,anio): # valida la fecha ingresada
 
 
 
-def faltan(dia,mes,anio): # Calcula los dias que tiene el mes
+def faltan(dia,mes,anio):
+    """ Recibe:
+            dia:<int>
+            mes:<int>
+            anio:<int>
+    Calcula los dias que faltan para que termine el mes """
     if fechaValida(dia,mes,anio) == 0:
         return "Fecha no valida"
     elif fechaValida(dia,mes,anio) == 1:
@@ -94,7 +111,12 @@ def faltan(dia,mes,anio): # Calcula los dias que tiene el mes
     
 
 
-def diashastafindeaño(dia,mes,anio): # dias para que termine el anio
+def diashastafindeaño(dia,mes,anio):
+    """ Recibe:
+            dia:<int>
+            mes:<int>
+            anio:<int>
+    indica cuantos dias faltan para que termine el anio desde la fecha ingresada """
     if fechaValida(dia,mes,anio) == 1:
         mesRestan = 12 - mes
         # meses que le quedan al año 
@@ -110,7 +132,12 @@ def diashastafindeaño(dia,mes,anio): # dias para que termine el anio
         return "Fecha no valida"
 
 
-def diasTranscurridos(dia,mes,anio): # dias trancurridos del anio
+def diasTranscurridos(dia,mes,anio):
+    """ Recibe:
+            dia:<int>
+            mes:<int>
+            anio:<int>
+    indica los dias trancurridos del anio hasta la fecha ingresada """
     if fechaValida(dia,mes,anio) == 1:
         diasTrans=0
         if esBisiesto(anio) == 1:
@@ -123,7 +150,15 @@ def diasTranscurridos(dia,mes,anio): # dias trancurridos del anio
     # esta funcion funciona con la funcion diashastafindeaño restandosela a 365 para obtener lo contrario (los dias transcurridos)
 
 
-def difFechas(dia,mes,anio,dia2,mes2,anio2): # diferencia entre dos fechas dadas por el usuario
+def difFechas(dia,mes,anio,dia2,mes2,anio2):
+    """ Recibe:
+            dia:<int>
+            mes:<int>
+            anio:<int>
+            dia2:<int>
+            mes2:<int>
+            anio2:<int>
+    indica cuanta diferencia de dias hay entre dos fechas dadas por el usuario """
         if fechaValida(dia,mes,anio) == 1 or fechaValida(dia2,mes2,anio2) == 1:
             difDias = 0
             aniosEntreFechas = anio2 - anio

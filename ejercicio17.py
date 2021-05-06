@@ -21,6 +21,12 @@ pCorta = 0
 telegrama = ""
 
 def formacionTelegrama(texto,pLarga,pCorta,telegrama):
+"""     Recibe:
+            texto:<string>
+            pLarga:<string>
+            pCorta:<string>
+            telegrama:<string>
+        Formo el telegrama con los arrobas y el precio"""
     costo = 0
     palabras = texto.split(" ")
     # divido el texto por " " en una lista llamada palabras

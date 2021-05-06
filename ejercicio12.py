@@ -6,7 +6,8 @@ palabra = input("ingrese una cadena de caracteres unicode: ")
 cont = 0
 
 
-if palabra == "": # revisa cuantas vocales aparecen en la palabra
+if palabra == "":
+    """ revisa cuantas vocales aparecen en la palabra """
     print("eso no es una cadena de caracteres unicode")
 else:
     for letra in palabra.upper():

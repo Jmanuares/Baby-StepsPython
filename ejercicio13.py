@@ -7,7 +7,11 @@ palabra = input("ingrese una palabra: ")
 palabra2 = input("ingrese otra palabra: ")
 
 
-def verificarCapital(str1,str2): # Verifica si la palabra 1 es la misma que la palabra 2 pero en mayusculas
+def verificarCapital(str1,str2):
+    """ Recibe:
+            str2:<string>
+            str1:<string>
+    Verifica si la palabra 1 es la misma que la palabra 2 pero en mayusculas """
     if palabra == palabra2.upper():
         return True
     else: 

@@ -2,7 +2,11 @@
 Por ejemplo, si recibe los números 1, 5, -2, -4 debe devolver 8, que es el producto más grande que se puede obtener entre ellos (8 = −2 × −4). """
 
 
-def compararMayor(n1,n2): # compara cual de los dos numeros ingresados es mayor
+def compararMayor(n1,n2):
+    """ Recibe:
+            n1:<int>
+            n2:<int>
+    compara cual de los dos numeros ingresados es mayor """
     if n1 > n2:
         return n1
     else:

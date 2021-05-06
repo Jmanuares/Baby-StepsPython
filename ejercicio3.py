@@ -1,7 +1,10 @@
 """ Implementar un algoritmo (en una o más funciones) que, dado un número entero numero, permita calcular su factorial."""
 
 
-def factorial(numero): # calcula el factorial de un numero
+def factorial(numero): 
+    """ Recibe:
+            numero:<int>
+    calcula el factorial de un numero """
     if numero == 0:
         factorial = 0
     else:
