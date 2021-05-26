@@ -19,35 +19,42 @@ except:
 listapalabrasalrevez=[]
 palabras = texto.split()
 
+
 def invertir(texto):
     """ Recibe:
         texto:<string>
     Invierte el texto con una lista auxiliar """
-    palabras = texto.split()
+    
     for i in range(len(palabras)): # añade las palabras de la lista "palabras" a una lista vacia "listapalabrasalrevez" pero de atras para adelante
         listapalabrasalrevez.append(palabras[-i-1])
     for i in range(len(listapalabrasalrevez)): # muestra listapalabrasalrevez
-        print(listapalabrasalrevez[i])
+        textoR = textoR + " " + listapalabrasalrevez[i]
+    return textoR
 
 
 def invertirLs(texto):
     """Recibe:
         texto:<string>
     Invierte el texto sin una lista auxiliar """
-    for i in range(len(palabras)):
-        palabras.append(palabras[len(palabras)-i-1])
-        palabras.remove(palabras[len(palabras)-i-1])
-        # pone la primer palabra al final y la elimina del principio
-    for i in range(len(palabras)):
-        print(palabras[i])
+    palabras = texto.split()
+    textoR = ""
+    for i in palabras: # añado las palabras a un string auxiliar pero en lugar de ponerlas al final las pongo al principio
+        textoR = i + " " + textoR
+    return textoR
+
+
+    # for i in range(len(palabras)):
+    #     palabras.append(palabras[len(palabras)-i-1])
+    #     palabras.remove(palabras[len(palabras)-i-1])
+    #     # pone la primer palabra al final y la elimina del principio
+    # for i in range(len(palabras)):
+    #     print(palabras[i])
 
 
 #interfaz de elegir funcion
-if funcion == "1": 
-    invertir(texto)
-elif funcion == "2":
-    invertirLs(texto)
+if funcion == 1: 
+    print(invertir(texto))
+elif funcion == 2:
+    print(invertirLs(texto))
 else:
     print("Respuesta invalida")
-
-

@@ -21,7 +21,7 @@ pCorta = 0
 telegrama = ""
 
 def formacionTelegrama(texto,pLarga,pCorta,telegrama):
-"""     Recibe:
+    """    Recibe:
             texto:<string>
             pLarga:<string>
             pCorta:<string>

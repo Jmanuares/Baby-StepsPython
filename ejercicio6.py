@@ -31,11 +31,11 @@ mul5= num2 * num4
 mul6= num3 * num4
 # aca genero las multiplicaciones entre cada numero
 
-mayor1= compararmayor(mul1,mul2)    
-mayor2= compararmayor(mayor1,mul3) 
-mayor3= compararmayor(mayor2,mul4) 
-mayor4= compararmayor(mayor3,mul5)
-mayor= compararmayor(mayor4,mul6) 
+mayor1= compararMayor(mul1,mul2)    
+mayor2= compararMayor(mayor1,mul3) 
+mayor3= compararMayor(mayor2,mul4) 
+mayor4= compararMayor(mayor3,mul5)
+mayor= compararMayor(mayor4,mul6) 
 # aca comparo todas las multiplicaciones y saco al mayor
 
 print("El mayor producto es", mayor)

@@ -3,9 +3,9 @@ que convierta un valor dado en grados Fahrenheit a grados Celsius. Recordar que 
 
 
 def conversion(faren): 
-    Recibe:
-            faren:<int>
-    convierte grados celsius a farenheit
+    #Recibe:
+    #       faren:<int>
+    # onvierte grados celsius a farenheit
 
     Celsius = (faren-32)* 5/9
 

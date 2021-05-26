@@ -32,7 +32,7 @@ while True:
             for i in range(1,5): # me fijo si estan los mismos numeros en la misma posicion eso es un acierto
                     if(adivinar[i-1:i] == resultado[i-1:i]):
                         aciertos +=1
-                        coincidencia -=1 # si hay un acierto mas tiene que haber una coincidencia menos 
+                        # si hay un acierto mas tiene que haber una coincidencia menos 
             
             
             if int(adivinar) != int(resultado):

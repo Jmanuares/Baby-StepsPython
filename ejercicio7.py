@@ -63,9 +63,9 @@ def esBisiesto(anio):
 
 
 def diasMes(mes):
-    Recibe:
-            mes:<int>
-    indica cuantos dias hay en el mes
+    # Recibe:
+    #         mes:<int>
+    # indica cuantos dias hay en el mes
     if esBisiesto(anio) == 1:
         dias["2"] = 29
         #si el año es bisiesto febrero ( que es 2 ) va a tener 29 dias
@@ -159,45 +159,45 @@ def difFechas(dia,mes,anio,dia2,mes2,anio2):
             mes2:<int>
             anio2:<int>
     indica cuanta diferencia de dias hay entre dos fechas dadas por el usuario """
-        if fechaValida(dia,mes,anio) == 1 or fechaValida(dia2,mes2,anio2) == 1:
-            difDias = 0
-            aniosEntreFechas = anio2 - anio
+    if fechaValida(dia,mes,anio) == 1 or fechaValida(dia2,mes2,anio2) == 1:
+        difDias = 0
+        aniosEntreFechas = anio2 - anio
             
-            aniosQuePasaron = 0
-            meses = 0
-            dias = 0
+        aniosQuePasaron = 0
+        meses = 0
+        dias = 0
 
-            if aniosEntreFechas == 0:
-                difDias = 365 - (diashastafindeaño(dia2, mes2, anio2) + diasTranscurridos(dia, mes,anio)) + 1
+        if aniosEntreFechas == 0:
+            difDias = 365 - (diashastafindeaño(dia2, mes2, anio2) + diasTranscurridos(dia, mes,anio)) + 1
                 # Si la comparacion es en el mismo tendra que restar los dias que le quedan para terminar el año  a la segunda fecha y los dias transcurridos de la primera 
                 # y añade 1 por que siempre va a dar la diferencia menos 1
 
-            else:
-                difDias = diasTranscurridos(dia2,mes2,anio2) + diashastafindeaño(dia,mes,anio)
-                for i in range(1,aniosEntreFechas):
-                    difDias = difDias + 365
+        else:
+            difDias = diasTranscurridos(dia2,mes2,anio2) + diashastafindeaño(dia,mes,anio)
+            for i in range(1,aniosEntreFechas):
+                difDias = difDias + 365
                 # si son años distintos tendra que sumas 365 por los años que hay en el medio y hacer los dias que le faltan para terminar el año a la primera fecha y los dias transcurridos de la segunda
 
-            while difDias >= 30:
-                    if difDias - 365 >= 0:
-                        difDias = difDias - 365
-                        aniosQuePasaron = aniosQuePasaron + 1
-                    elif difDias - 30 >= 0 and difDias - 365 < 0:
-                        difDias = difDias - 30
-                        meses = meses + 1
+        while difDias >= 30:
+                if difDias - 365 >= 0:
+                    difDias = difDias - 365
+                    aniosQuePasaron = aniosQuePasaron + 1
+                elif difDias - 30 >= 0 and difDias - 365 < 0:
+                    difDias = difDias - 30
+                    meses = meses + 1
             # siempre que pueda restar 365 sumara un año y lo restara y sino restara 30 y sumara 1 mes
 
-            if meses == 12:
-                meses = 0
-                aniosQuePasaron =+ 1        
+        if meses == 12:
+            meses = 0
+            aniosQuePasaron =+ 1        
             # si hay 360 a 364 dias dira que hay 12 meses lo que sera un error por eso hay que cambiarlo a 1 anio
 
-            if aniosEntreFechas == 0:
-                return (f"Entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {difDias} dias y {meses} meses")
-            else:
-                return (f"Entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {difDias} dias, {meses} meses y {aniosQuePasaron} anios")
+        if aniosEntreFechas == 0:
+            return (f"Entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {difDias} dias y {meses} meses")
         else:
-            return "Fecha invalida"
+            return (f"Entre la fecha {dia}/{mes}/{anio} y {dia2}/{mes2}/{anio2} hay {difDias} dias, {meses} meses y {aniosQuePasaron} anios")
+    else:
+        return "Fecha invalida"
 
 
 # En todas las funciones hay un try, except que no permite al usuario completar campos con strings o dejar campo vacio
